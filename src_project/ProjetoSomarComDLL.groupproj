@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1894F44A-2CDC-41AF-B523-1D4B5EAFC24A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\src_system\projSomar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\src_dll\DLLSomar.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="projSomar">
+        <MSBuild Projects="..\src_system\projSomar.dproj"/>
+    </Target>
+    <Target Name="projSomar:Clean">
+        <MSBuild Projects="..\src_system\projSomar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="projSomar:Make">
+        <MSBuild Projects="..\src_system\projSomar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DLLSomar">
+        <MSBuild Projects="..\src_dll\DLLSomar.dproj"/>
+    </Target>
+    <Target Name="DLLSomar:Clean">
+        <MSBuild Projects="..\src_dll\DLLSomar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DLLSomar:Make">
+        <MSBuild Projects="..\src_dll\DLLSomar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="projSomar;DLLSomar"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="projSomar:Clean;DLLSomar:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="projSomar:Make;DLLSomar:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
