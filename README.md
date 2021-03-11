@@ -26,7 +26,8 @@ Aconselha-se abrir o projeto utilizando o grupo do projeto, que encontra-se na p
 Aconselha-se ao abrir o grupo do projeto, realizar os seguintes passos:
 - Sobre o grupo do projeto: botão direito do mouse > Clean All;
 - Sobre o grupo do projeto: botão direito do mouse > Build All;
-- Sobre o grupo do projeto: botão direito do mouse > Compile All;
+- Sobre o grupo do projeto: botão direito do mouse > Compile All.
+
 Após estes procedimentos, será criada a pasta "exe", onde estará localizado o Aplicativo ("projSomar.exe") e a DLL ("DLLSomar.dll").
 
 ## Usabilidade da aplicação
